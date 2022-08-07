@@ -14,7 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Points = void 0;
 const typeorm_1 = require("typeorm");
-const Activity_1 = require("./Activity");
+const Activities_1 = require("./Activities");
 const Users_1 = __importDefault(require("./Users"));
 let Points = class Points {
 };
@@ -24,19 +24,19 @@ __decorate([
 ], Points.prototype, "id", void 0);
 __decorate([
     (0, typeorm_1.OneToOne)(() => Users_1.default, {
-        onDelete: 'NO ACTION'
+        onDelete: "NO ACTION",
     }),
     (0, typeorm_1.JoinColumn)({
-        name: 'id'
+        name: "user_id",
     }),
     __metadata("design:type", Object)
 ], Points.prototype, "userId", void 0);
 __decorate([
-    (0, typeorm_1.OneToOne)(() => Activity_1.Activities, {
-        onDelete: 'NO ACTION'
+    (0, typeorm_1.OneToOne)(() => Activities_1.Activities, {
+        onDelete: "NO ACTION",
     }),
     (0, typeorm_1.JoinColumn)({
-        name: 'id'
+        name: "activity_id",
     }),
     __metadata("design:type", Object)
 ], Points.prototype, "acitivityId", void 0);

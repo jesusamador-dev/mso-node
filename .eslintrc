@@ -132,6 +132,8 @@
       "quote-props": ["error", "consistent-as-needed"],
       "space-in-parens": "error",
       "unicode-bom": ["error", "never"],
-      "use-isnan": "error"
+      "use-isnan": "error",
+      "indent": "off",
+      "@typescript-eslint/indent": ["error"]
   }
 }

@@ -14,23 +14,28 @@ const typeorm_1 = require("typeorm");
 let Activities = class Activities {
 };
 __decorate([
-    (0, typeorm_1.PrimaryGeneratedColumn)(),
+    (0, typeorm_1.PrimaryGeneratedColumn)("increment"),
     __metadata("design:type", Object)
 ], Activities.prototype, "id", void 0);
 __decorate([
     (0, typeorm_1.Column)({
-        length: 100
+        type: "varchar",
+        length: 32,
     }),
     __metadata("design:type", Object)
-], Activities.prototype, "nameActivity", void 0);
+], Activities.prototype, "name", void 0);
 __decorate([
     (0, typeorm_1.Column)({
-        length: 255
+        type: "varchar",
+        length: 500,
     }),
     __metadata("design:type", Object)
 ], Activities.prototype, "url", void 0);
 __decorate([
-    (0, typeorm_1.Column)("int"),
+    (0, typeorm_1.Column)({
+        name: "value_points",
+        type: "int",
+    }),
     __metadata("design:type", Object)
 ], Activities.prototype, "valuePoints", void 0);
 Activities = __decorate([

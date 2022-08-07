@@ -1,29 +1,27 @@
-import express, { Express, Router } from 'express';
+import bodyParser from "body-parser";
+import express, { Express, Router } from "express";
 
 class Server {
-  private app: Express = express();
-  private port: number;
+	private app: Express = express();
+	private port: number;
 
-  constructor(port: number, routes: Array<Router>) {
-    this.port = port;
-    this.generateRoutes(routes);
-    this.configuration()
-  }
+	constructor(port: number, router: Router) {
+		this.port = port;
+		this.configuration();
+		this.generateRoutes(router);
+	}
 
-  private configuration() {
-    this.app.use(express.json());
-  }
+	private configuration() {
+		this.app.use(bodyParser.json());
+	}
 
-  private generateRoutes(routesGroup: Array<Router>) {
-    routesGroup.forEach(routes => {
-      this.app.use('/api/v1', routes);
-    });
-  }
+	private generateRoutes(router: Router) {
+		this.app.use("/api/v1", router);
+	}
 
-  public start() {
-    this.app.listen(this.port, () => console.log("Servidor listo!"));
-  }
+	public start() {
+		this.app.listen(this.port, () => console.log("Servidor listo!"));
+	}
 }
-
 
 export default Server;
