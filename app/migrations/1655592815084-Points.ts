@@ -5,9 +5,7 @@ import {
 	TableForeignKey,
 } from "typeorm";
 
-export class UsersActivities1655592815084 implements MigrationInterface {
-	name = "UsersActivities1655592815084";
-
+export class Points1655592815084 implements MigrationInterface {
 	public async up(queryRunner: QueryRunner): Promise<void> {
 		if (await queryRunner.hasTable("points")) return;
 		await queryRunner.createTable(

@@ -39,4 +39,4 @@ class ErrorHandler {
 	}
 }
 
-export const errorHandler = new ErrorHandler();
+export default ErrorHandler;
