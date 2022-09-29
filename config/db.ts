@@ -20,7 +20,7 @@ const appDataSource = new DataSource({
 
 appDataSource
 	.initialize()
-	.then((_res) => {})
-	.catch((_error) => {});
+	.then((_res) => { })
+	.catch((_error) => { console.log(_error) });
 
 export default appDataSource;

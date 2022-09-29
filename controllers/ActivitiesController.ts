@@ -17,12 +17,6 @@ export default class ActivitiesController {
 	async get(_req: Request, res: Response) {
 		let httpResponse;
 		const data = await this.activitesRepository.find();
-		if (data.length === 0) {
-			throw new AppError({
-				httpCode: HttpCode.NOT_FOUND,
-				message: HttpMessage.NOT_FOUND,
-			});
-		}
 
 		httpResponse = new HttpResponse({ status: HttpMessage.OK, result: data });
 

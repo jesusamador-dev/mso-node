@@ -6,7 +6,7 @@ import {
 	PrimaryGeneratedColumn,
 } from "typeorm";
 import { Activities } from "./Activities";
-import Users from "./Users";
+import { Users } from "./Users";
 
 @Entity()
 export class Points {
@@ -18,6 +18,7 @@ export class Points {
 	})
 	@JoinColumn({
 		name: "user_id",
+		referencedColumnName: "id"
 	})
 	userId: number | undefined;
 

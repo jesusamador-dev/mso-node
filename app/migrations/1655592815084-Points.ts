@@ -26,8 +26,7 @@ export class Points1655592815084 implements MigrationInterface {
 					},
 					{
 						name: "activity_id",
-						type: "varchar",
-						length: "500",
+						type: "int",
 					},
 					{
 						name: "points",
